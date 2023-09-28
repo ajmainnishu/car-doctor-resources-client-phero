@@ -25,7 +25,7 @@ const Navigation = () => {
                         </ul>
                     </div>
                     {/* website logo */}
-                    <Link to={`/`} className="btn w-28">
+                    <Link to={`/`} className="w-28">
                         <img src={logo} alt="website logo" />
                     </Link>
                 </div>
