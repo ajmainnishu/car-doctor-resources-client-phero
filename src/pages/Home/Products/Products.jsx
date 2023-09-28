@@ -24,7 +24,7 @@ const Products = () => {
             <div className='space-y-5 text-center'>
                 <h5 className='text-[#FF3811] text-xl font-bold'>Popular Products</h5>
                 <h2 className='text-[#151515] font-bold text-5xl'>Browse Our Products</h2>
-                <p className='text-[#737373] capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised <br className='hidden md:block' /> words which don&apos; look even slightly believable. </p>
+                <p className='text-[#737373] capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised <br className='hidden md:block' /> words which don&apos;t look even slightly believable. </p>
             </div>
             {/* items box container */}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>

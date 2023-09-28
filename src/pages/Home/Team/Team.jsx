@@ -23,7 +23,7 @@ const Team = () => {
             <div className='space-y-5 text-center'>
                 <h5 className='text-[#FF3811] text-xl font-bold'>Team</h5>
                 <h2 className='text-[#151515] font-bold text-5xl'>Meet Our Team</h2>
-                <p className='text-[#737373] capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised <br className='hidden md:block' /> words which don&apos; look even slightly believable. </p>
+                <p className='text-[#737373] capitalize'>the majority have suffered alteration in some form, by injected humour, or randomised <br className='hidden md:block' /> words which don&apos;t look even slightly believable. </p>
             </div>
             {/* carousel box container */}
             <div className="carousel w-full lg:px-6">
