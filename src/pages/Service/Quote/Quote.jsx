@@ -11,7 +11,7 @@ const Quote = () => {
             <div className='bg-white relative px-3 pt-5 pb-9 rounded-lg'>
                 <p className='text-[#FF3811] font-bold text-xl'>Car Doctor <span className='text-[#151515]'>Special</span></p>
                 <p className='text-[#737373] font-bold text-base'>Save up to <span className='text-[#FF3811]'>60% off</span></p>
-                <p className='absolute py-4 px-8 bg-[#FF3811] text-white text-lg font-semibold rounded top-3/4 left-8 right-8'>Get A Quote</p>
+                <p className='absolute py-4 px-8 bg-[#FF3811] text-white text-lg font-semibold rounded top-3/4 left-1/2 -translate-x-1/2'>Get A Quote</p>
             </div>
         </div>
     );
