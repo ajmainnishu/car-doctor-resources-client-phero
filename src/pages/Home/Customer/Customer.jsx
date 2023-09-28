@@ -39,7 +39,7 @@ const Customer = () => {
                                     <img src={customerPhoto1} alt="customer 1" />
                                     {customerInfo}
                                 </div>
-                                <img src={customerQuote} alt="Customer Quote" className='mr-20' />
+                                <img src={customerQuote} alt="Customer Quote" className='md:mr-20' />
                             </div>
                             {customerDetails}
                         </div>
@@ -50,7 +50,7 @@ const Customer = () => {
                                     <img src={customerPhoto2} alt="customer 1" />
                                     {customerInfo}
                                 </div>
-                                <img src={customerQuote} alt="Customer Quote" className='mr-20' />
+                                <img src={customerQuote} alt="Customer Quote" className='md:mr-20' />
                             </div>
                             {customerDetails}
                         </div>
