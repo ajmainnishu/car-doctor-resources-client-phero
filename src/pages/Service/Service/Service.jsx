@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import Download from "../Download/Download";
+import Quote from "../Quote/Quote";
 
 
 const Service = () => {
@@ -12,6 +13,7 @@ const Service = () => {
                 </div>
                 <div className="w-4/12">
                     <Download></Download>
+                    <Quote></Quote>
                 </div>
             </div>
         </div>
