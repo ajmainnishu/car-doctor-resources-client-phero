@@ -6,6 +6,7 @@ import partsPhoto5 from '../../../assets/products/product-5.png';
 import partsPhoto6 from '../../../assets/products/product-6.png';
 
 const Products = () => {
+    // box container info
     const boxInfo = <div className='text-center pt-5 pb-1.5 space-y-2.5'>
         <div className="rating space-x-1">
             <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#FF912C]" />
@@ -29,43 +30,43 @@ const Products = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {/* item 1 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
-                    <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={partsPhoto1} alt="Parts Photo 1" />
+                    <div className='bg-[#F3F3F3] rounded-lg '>
+                        <img src={partsPhoto1} alt="Parts Photo 1" className='h-52 py-8 mx-auto' />
                     </div>
                     {boxInfo}
                 </div>
                 {/* item 2 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={partsPhoto2} alt="Parts Photo 2" />
+                        <img src={partsPhoto2} alt="Parts Photo 2" className='h-52 py-8 mx-auto' />
                     </div>
                     {boxInfo}
                 </div>
                 {/* item 3 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={partsPhoto3} alt="Parts Photo 3" />
+                        <img src={partsPhoto3} alt="Parts Photo 3" className='h-52 py-8 mx-auto' />
                     </div>
                     {boxInfo}
                 </div>
                 {/* item 4 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={partsPhoto4} alt="Parts Photo 4" />
+                        <img src={partsPhoto4} alt="Parts Photo 4" className='h-52 py-8 mx-auto' />
                     </div>
                     {boxInfo}
                 </div>
                 {/* item 5 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={partsPhoto5} alt="Parts Photo 5" />
+                        <img src={partsPhoto5} alt="Parts Photo 5" className='h-52 py-8 mx-auto' />
                     </div>
                     {boxInfo}
                 </div>
                 {/* item 6 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={partsPhoto6} alt="Parts Photo 6" />
+                        <img src={partsPhoto6} alt="Parts Photo 6" className='h-52 py-8 mx-auto' />
                     </div>
                     {boxInfo}
                 </div>

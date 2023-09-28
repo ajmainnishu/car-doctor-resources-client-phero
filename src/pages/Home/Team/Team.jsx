@@ -28,21 +28,21 @@ const Team = () => {
                 {/* team 1 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={teamPhoto1} alt="Team Photo 1" />
+                        <img src={teamPhoto1} alt="Team Photo 1" className='rounded-lg' />
                     </div>
                     {boxInfo}
                 </div>
                 {/* team 2 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={teamPhoto2} alt="Team Photo 2" />
+                        <img src={teamPhoto2} alt="Team Photo 2" className='rounded-lg' />
                     </div>
                     {boxInfo}
                 </div>
                 {/* team 3 */}
                 <div className='px-5 py-6 border shadow rounded-lg'>
                     <div className='bg-[#F3F3F3] rounded-lg'>
-                        <img src={teamPhoto3} alt="Team Photo 3" />
+                        <img src={teamPhoto3} alt="Team Photo 3" className='rounded-lg' />
                     </div>
                     {boxInfo}
                 </div>
