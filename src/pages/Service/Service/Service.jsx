@@ -14,10 +14,10 @@ const Service = () => {
     // import single data into state hook
     const [services, setServices] = useState(loadingServices);
     return (
-        <div className="lg:w-9/12 mx-auto px-5 lg:px-0">
+        <div className="lg:w-9/12 mx-auto px-5 lg:px-0 space-y-32">
             {/* top banner */}
             <Banner></Banner>
-            <div className="md:flex gap-6 mt-32">
+            <div className="md:flex gap-6">
                 <div className=" md:w-7/12 lg:w-8/12 space-y-12">
                     {/* left side single data component */}
                     <SingleService services={services}></SingleService>
@@ -34,7 +34,7 @@ const Service = () => {
                     {/* price */}
                     <p className="text-[#151515] text-4xl font-bold">Price: ${services.price}</p>
                     {/* checkout button */}
-                    <Link className="btn btn-block capitalize text-lg text-white bg-[#FF3811] rounded">Proceed Checkout</Link>
+                    <Link to={`/checkout`} className="btn btn-block capitalize text-lg text-white bg-[#FF3811] rounded">Proceed Checkout</Link>
                 </div>
             </div>
         </div>
