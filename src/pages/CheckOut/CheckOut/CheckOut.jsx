@@ -1,4 +1,4 @@
-import Banner from "../Service/Banner/Banner";
+import Banner from "../Banner/Banner";
 
 const CheckOut = () => {
     return (

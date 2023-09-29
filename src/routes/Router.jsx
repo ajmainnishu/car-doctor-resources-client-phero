@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main/Main";
 import Home from "../pages/Home/Home/Home";
 import Service from "../pages/Service/Service/Service";
-import CheckOut from "../pages/CheckOut/CheckOut";
+import CheckOut from "../pages/CheckOut/CheckOut/CheckOut";
+import AddNewService from "../pages/AddNewService/AddNewService/AddNewService";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <CheckOut />
+            },
+            {
+                path: '/add-new-service',
+                element: <AddNewService />
             }
         ]
     }

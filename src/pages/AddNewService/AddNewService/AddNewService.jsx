@@ -1,6 +1,6 @@
-import Banner from "./Banner/Banner";
+import Banner from "../Banner/Banner";
 
-const CheckOut = () => {
+const AddNewService = () => {
     return (
         <div className="lg:w-9/12 mx-auto px-5 lg:px-0 space-y-32">
             <Banner></Banner>
@@ -12,10 +12,10 @@ const CheckOut = () => {
                     <input type="text" placeholder="Service Name here" className="input input-bordered w-full" />
                 </div>
                 <textarea placeholder="Your Message" className="textarea textarea-bordered textarea-lg w-full" ></textarea>
-                <button className="btn capitalize text-xl btn-block font-semibold bg-[#FF3811] border-none text-white rounded-lg">Order Confirm</button>
+                <button className="btn capitalize text-xl btn-block font-semibold bg-[#FF3811] border-none text-white rounded-lg">Submit</button>
             </form>
         </div>
     );
 };
 
-export default CheckOut;
+export default AddNewService;
