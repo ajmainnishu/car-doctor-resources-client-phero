@@ -1,7 +1,7 @@
 import loginPhoto from '../../assets/login/login.svg';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import googleIcon from '../../assets/social_media/google 1.svg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
@@ -9,6 +9,9 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
     const { userSignIn, userFacebookSignIn, userGoogleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
     // user sign in
     const handleLogIn = event => {
         event.preventDefault();
@@ -22,6 +25,8 @@ const Login = () => {
                     icon: 'success',
                     title: 'Successfully Sign In',
                 })
+                // location redirect
+                navigate(from, {replace: true})
                 form.reset();
             }).catch(error => {
                 // react toastify

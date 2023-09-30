@@ -4,9 +4,10 @@ import Home from "../pages/Home/Home/Home";
 import Service from "../pages/Service/Service/Service";
 import CheckOut from "../pages/CheckOut/CheckOut/CheckOut";
 import AddNewService from "../pages/AddNewService/AddNewService/AddNewService";
-import Appointment from "../layout/Appoinment/Appointment";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
+import Appointment from "../layout/Appoinment/Appointment";
 
 const router = createBrowserRouter([
     {
@@ -25,11 +26,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/checkout',
-                element: <CheckOut />
+                element: <PrivateRoute><CheckOut /></PrivateRoute>
             },
             {
                 path: '/add-new-service',
-                element: <AddNewService />
+                element: <PrivateRoute><AddNewService /></PrivateRoute>
             }
         ]
     },
