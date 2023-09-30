@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import googleIcon from '../../assets/social_media/google 1.svg';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const SignUp = () => {
     return (
         <div className="lg:w-9/12 mx-auto px-5 lg:px-0">
             <div className="hero-content justify-between flex-col lg:flex-row gap-y-20 gap-x-10">
@@ -14,10 +14,17 @@ const Login = () => {
                 {/* login form */}
                 <div className="card w-full lg:w-1/2 border border-[#D0D0D0] rounded-lg p-10 md:p-20 space-y-12">
                     {/* title */}
-                    <h2 className='text-center text-[#444444] font-semibold text-4xl'>Login</h2>
+                    <h2 className='text-center text-[#444444] font-semibold text-4xl'>Sign Up</h2>
                     <div className='space-y-7'>
                         {/* form */}
                         <form className="space-y-7">
+                            {/* name */}
+                            <div className="form-control space-y-3">
+                                <label>
+                                    <span className="text-[#444444] text-lg font-semibold">Name</span>
+                                </label>
+                                <input type="text" name="name" placeholder="Your name" className="input input-bordered" />
+                            </div>
                             {/* email */}
                             <div className="form-control space-y-3">
                                 <label>
@@ -34,12 +41,12 @@ const Login = () => {
                             </div>
                             {/* button */}
                             <div className="form-control">
-                                <button className="btn border-none bg-[#FF3811] capitalize text-white font-semibold text-xl">Sign In</button>
+                                <button className="btn border-none bg-[#FF3811] capitalize text-white font-semibold text-xl">Sign Up</button>
                             </div>
                         </form>
                         {/* others sign in button */}
                         <div className='text-center space-y-7'>
-                            <p className='text-[#444444] font-medium text-lg'>Or Sign In with</p>
+                            <p className='text-[#444444] font-medium text-lg'>Or Sign Up with</p>
                             <div className='space-x-4'>
                                 {/* facebook button */}
                                 <button className="btn btn-circle bg-[#F5F5F8] border-none">
@@ -57,11 +64,11 @@ const Login = () => {
                         </div>
                     </div>
                     {/* sign up button */}
-                    <p className='text-lg font-normal text-[#737373] text-center'>Have an account? <Link to={`/appointment/signUp`} className='text-[#FF3811] font-semibold'>Sign Up</Link></p>
+                    <p className='text-lg font-normal text-[#737373] text-center'>Have an account? <Link to={`/appointment/login`} className='text-[#FF3811] font-semibold'>Login</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
