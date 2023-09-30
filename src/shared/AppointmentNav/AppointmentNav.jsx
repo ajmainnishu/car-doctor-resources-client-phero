@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo/logo.svg';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AppointmentNav = () => {
+    const { user, logOut } = useContext(AuthContext);
+    // log out button
+    const handleLogOut = () => {
+        logOut()
+    }
     // nav links
     const navLink = <>
         <li className='text-xl font-semibold text-[#444444]'><Link to={`/`}>Order</Link></li>
         <li className='text-xl font-semibold text-[#444444]'><Link>Order Review</Link></li>
         <li className='text-xl font-semibold text-[#444444]'><Link>Manage Inventory</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link to={`/appointment/login`}>Login</Link></li>
+        {/* user state check */}
+        {!user && <li className='text-xl font-semibold text-[#444444]'><Link to={`/appointment/login`}>Login</Link></li>}
+        {user && <li className='text-xl font-semibold text-[#444444]'><Link onClick={handleLogOut}>Log Out</Link></li>}
     </>
     return (
         <div className='lg:w-9/12 mx-auto my-10'>
