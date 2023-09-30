@@ -7,15 +7,6 @@ const Services = () => {
     const loadingItems = useLoaderData();
     // located data to state hook
     const [items, setItems] = useState(loadingItems.slice(0, 6));
-    // const [items, setItems] = useState([]);
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/services')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setItems(data.slice(0, 6))
-    //        
-    //         })
-    // }, [])
     // button disable
     const handleProducts = () => {
         setItems(loadingItems);
