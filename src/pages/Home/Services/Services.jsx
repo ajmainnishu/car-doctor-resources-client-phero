@@ -1,15 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Services = () => {
-    const [items, setItems] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => setItems(data))
-    }, [])
-    // console.log(items)
+    // fetch data from server
+    const loadingItems = useLoaderData();
+    // located data to state hook
+    const [items, setItems] = useState(loadingItems.slice(0, 6));
+    // const [items, setItems] = useState([]);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/services')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setItems(data.slice(0, 6))
+    //        
+    //         })
+    // }, [])
+    // button disable
+    const handleProducts = () => {
+        setItems(loadingItems);
+        document.getElementById('buttonDisabled').disabled = "disabled"
+    }
     return (
         <div className="lg:w-9/12 mx-auto px-5 lg:px-0 space-y-12">
             <div className='space-y-5 text-center'>
@@ -36,7 +47,7 @@ const Services = () => {
             </div>
             {/* button */}
             <div className='text-center' >
-                <button className="btn btn-outline capitalize rounded-md text-[#FF3811] text-lg font-semibold px-5">More Products</button>
+                <button onClick={handleProducts} id="buttonDisabled" className="btn btn-outline capitalize rounded-md text-[#FF3811] text-lg font-semibold px-5">More Products</button>
             </div>
         </div>
     );
