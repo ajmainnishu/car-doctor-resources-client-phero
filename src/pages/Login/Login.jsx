@@ -2,8 +2,67 @@ import loginPhoto from '../../assets/login/login.svg';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import googleIcon from '../../assets/social_media/google 1.svg';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
+    const { userSignIn, userFacebookSignIn, userGoogleSignIn } = useContext(AuthContext);
+    // user sign in
+    const handleLogIn = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        userSignIn(email, password)
+            .then(() => {
+                // sweet alert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successfully Sign In',
+                })
+                form.reset();
+            }).catch(error => {
+                // react toastify
+                toast(error.message);
+            })
+    }
+    // user facebook sign in
+    const handleFacebookSignIn = () => {
+        userFacebookSignIn()
+            .then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successfully Sign Up',
+                })
+            })
+            .catch(error => {
+                toast(error.message);
+            })
+    }
+    // user linkedin sign in
+    const handleLinkedinSignIn = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Coming Soon!!!',
+        })
+    }
+    // user google sign in
+    const handleGoogleSignIn = () => {
+        userGoogleSignIn()
+            .then(() => {
+                // sweet alert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successfully Sign Up',
+                })
+            })
+            .catch(error => {
+                // react toastify
+                toast(error.message);
+            })
+    }
     return (
         <div className="lg:w-9/12 mx-auto px-5 lg:px-0">
             <div className="hero-content justify-between flex-col lg:flex-row gap-y-20 gap-x-10">
@@ -17,7 +76,7 @@ const Login = () => {
                     <h2 className='text-center text-[#444444] font-semibold text-4xl'>Login</h2>
                     <div className='space-y-7'>
                         {/* form */}
-                        <form className="space-y-7">
+                        <form onSubmit={handleLogIn} className="space-y-7">
                             {/* email */}
                             <div className="form-control space-y-3">
                                 <label>
@@ -30,7 +89,7 @@ const Login = () => {
                                 <label>
                                     <span className="text-[#444444] text-lg font-semibold">Confirm Password</span>
                                 </label>
-                                <input type="password" placeholder="Your password" className="input input-bordered" />
+                                <input type="password" name="password" placeholder="Your password" className="input input-bordered" />
                             </div>
                             {/* button */}
                             <div className="form-control">
@@ -42,15 +101,15 @@ const Login = () => {
                             <p className='text-[#444444] font-medium text-lg'>Or Sign In with</p>
                             <div className='space-x-4'>
                                 {/* facebook button */}
-                                <button className="btn btn-circle bg-[#F5F5F8] border-none">
+                                <button onClick={handleFacebookSignIn} className="btn btn-circle bg-[#F5F5F8] border-none">
                                     <FaFacebookF className='text-xl text-[#3B5998]' />
                                 </button>
                                 {/* instagram button */}
-                                <button className="btn btn-circle bg-[#F5F5F8] border-none">
+                                <button onClick={handleLinkedinSignIn} className="btn btn-circle bg-[#F5F5F8] border-none">
                                     <FaInstagram className='text-xl text-[#0A66C2]' />
                                 </button>
                                 {/* google button */}
-                                <button className="btn btn-circle bg-[#F5F5F8] border-none">
+                                <button onClick={handleGoogleSignIn} className="btn btn-circle bg-[#F5F5F8] border-none">
                                     <img src={googleIcon} alt="Google Icon" />
                                 </button>
                             </div>
@@ -60,6 +119,8 @@ const Login = () => {
                     <p className='text-lg font-normal text-[#737373] text-center'>Have an account? <Link to={`/appointment/signUp`} className='text-[#FF3811] font-semibold'>Sign Up</Link></p>
                 </div>
             </div>
+            {/* react toastify */}
+            <ToastContainer />
         </div>
     );
 };

@@ -131,6 +131,7 @@ const SignUp = () => {
                     <p className='text-lg font-normal text-[#737373] text-center'>Have an account? <Link to={`/appointment/login`} className='text-[#FF3811] font-semibold'>Login</Link></p>
                 </div>
             </div>
+            {/* react toastify */}
             <ToastContainer />
         </div>
     );
