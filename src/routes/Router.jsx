@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Appointment from "../layout/Appoinment/Appointment";
+import OrderReview from "../pages/OrderReview/OrderReview/OrderReview";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: 'signUp',
                 element: <SignUp />
+            },
+            {
+                path: 'order-review',
+                element: <OrderReview />
             }
         ]
     }
