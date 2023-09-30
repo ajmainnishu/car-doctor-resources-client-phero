@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home/Home";
 import Service from "../pages/Service/Service/Service";
 import CheckOut from "../pages/CheckOut/CheckOut/CheckOut";
 import AddNewService from "../pages/AddNewService/AddNewService/AddNewService";
+import Appointment from "../layout/Appoinment/Appointment";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
                 element: <AddNewService />
             }
         ]
+    },
+    {
+        path: 'appointment',
+        element: <Appointment />
     }
 ])
 

@@ -1,15 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import logo from '../../assets/logo/logo.svg';
-import { FaSistrix, FaRegClipboard } from 'react-icons/fa';
 
-const Navigation = () => {
+const AppointmentNav = () => {
     // nav links
     const navLink = <>
-        <li className='text-xl font-semibold text-[#444444]'><Link to={`/`}>Home</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link>About</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link to={`/add-new-service`}>Services</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link>Blog</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link>Contact</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link to={`/`}>Order</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link>Order Review</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link to={`/add-new-service`}>Manage Inventory</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link>Login</Link></li>
     </>
     return (
         <div className='lg:w-9/12 mx-auto my-10'>
@@ -35,15 +33,10 @@ const Navigation = () => {
                         {navLink}
                     </ul>
                 </div>
-                {/* buttons */}
-                <div className="navbar-end items-center space-x-5">
-                    <FaRegClipboard className='text-2xl text-[#444444]' />
-                    <FaSistrix className='text-2xl text-[#444444]' />
-                    <Link to={`/appointment`} className="btn text-[#FF3811] capitalize btn-outline rounded-md px-7 text-lg font-semibold">Appointment</Link>
-                </div>
             </div>
         </div>
+
     );
 };
 
-export default Navigation;
+export default AppointmentNav;
