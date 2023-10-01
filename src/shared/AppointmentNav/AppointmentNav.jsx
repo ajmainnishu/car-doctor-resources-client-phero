@@ -13,7 +13,7 @@ const AppointmentNav = () => {
     const navLink = <>
         <li className='text-xl font-semibold text-[#444444]'><Link to={`/`}>Order</Link></li>
         <li className='text-xl font-semibold text-[#444444]'><Link to={`/appointment/order-review`}>Order Review</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link>Manage Inventory</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link to={`/appointment/manage-inventory`}>Manage Inventory</Link></li>
         {/* user state check */}
         {!user && <li className='text-xl font-semibold text-[#444444]'><Link to={`/appointment/login`}>Login</Link></li>}
         {user && <li className='text-xl font-semibold text-[#444444]'><Link onClick={handleLogOut}>Log Out</Link></li>}

@@ -1,15 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { FaReply, FaRegTrashAlt } from 'react-icons/fa';
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const OrderReview = () => {
+const ManageInventory = () => {
     const { user } = useContext(AuthContext);
     const [booking, setBooking] = useState([]);
-    // fetch data form server and sorting email and status
-    const url = `http://localhost:5000/userdetails/pending?email=${user?.email}`
+    const url = `http://localhost:5000/userdetails/approved?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -35,54 +32,9 @@ const OrderReview = () => {
                 setBooking(remaining);
             })
     }
-    // status change button
-    const handleStatus = _id => {
-        // update single service status from server
-        fetch(`http://localhost:5000/userdetails/${_id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({ status: 'approved' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    // sweet alert
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Pending Approved',
-                    })
-                }
-                // get services without clicking specific service
-                const remaining = booking?.filter(book => book?._id !== _id);
-                setBooking(remaining);
-            })
-    }
-    // delete all service button
-    const handleAllDelete = () => {
-        // delete all services from server
-        fetch(`http://localhost:5000/useralldelete/pending?email=${user?.email}`, {
-            method: 'DELETE',
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    // sweet alert
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'All Items Deleted',
-                    })
-                }
-                // put empty array
-                setBooking([]);
-            })
-    }
     return (
         <div className="lg:w-9/12 mx-auto px-5 lg:px-0 space-y-32">
-            {/* top banner part */}
             <Banner></Banner>
-            {/* table part */}
             <div>
                 {
                     booking?.map(book => <div key={book?._id} className="overflow-x-auto">
@@ -111,27 +63,22 @@ const OrderReview = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    {/* price */}
-                                    <td className="text-[#444444] font-semibold text-xl">${book?.productPrice}</td>
+                                    {/* email */}
+                                    <td className="text-[#444444] font-semibold text-xl">${book?.email}</td>
                                     {/* date */}
                                     <td className="text-[#2D2D2D] font-medium text-xl">{book?.date}</td>
                                     {/* status button */}
                                     <th className="text-right">
-                                        <button onClick={() => handleStatus(book?._id)} className="btn px-5 capitalize text-white font-semibold text-xl bg-[#FF3811]">{book?.status}</button>
+                                        <button className="btn btn-outline px-5 capitalize font-semibold text-xl text-[#29B170]">{book.status}</button>
                                     </th>
                                 </tr>
                             </tbody>
                         </table>
                     </div>)
                 }
-                {/* buttons */}
-                <div className="flex flex-col md:flex-row md:justify-between mt-12 text-[#444444] font-normal text-xl space-y-5 md:space-y-0">
-                    <Link to={`/`} className="flex items-center justify-center gap-5"><FaReply /> Continue Shopping</Link>
-                    <button onClick={handleAllDelete} className="flex items-center justify-center gap-5"><FaRegTrashAlt /> Clear Shopping Cart</button>
-                </div>
             </div>
         </div>
     );
 };
 
-export default OrderReview;
+export default ManageInventory;

@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Appointment from "../layout/Appoinment/Appointment";
 import OrderReview from "../pages/OrderReview/OrderReview/OrderReview";
+import ManageInventory from "../pages/ManageInventory/ManageInventory.jsx/ManageInventory";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
             {
                 path: 'order-review',
                 element: <OrderReview />
+            },
+            {
+                path: 'manage-inventory',
+                element: <ManageInventory />
             }
         ]
     }
