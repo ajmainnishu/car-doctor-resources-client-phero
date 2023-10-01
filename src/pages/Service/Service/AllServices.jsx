@@ -15,8 +15,8 @@ const AllServices = ({setServices}) => {
             <h2 className="text-[#151515] font-bold text-2xl">Services</h2>
             <div className="space-y-5">
                 {
-                    items.map(item => <Link onClick={() => setServices(item)}  key={item._id} className="flex capitalize items-center justify-between p-4 bg-white rounded hover:bg-[#FF3811] hover:text-white">
-                        <p className="text-[#151515] font-semibold hover:text-white">{item.title}</p>
+                    items?.map(item => <Link onClick={() => setServices(item)}  key={item?._id} className="flex capitalize items-center justify-between p-4 bg-white rounded hover:bg-[#FF3811] hover:text-white">
+                        <p className="text-[#151515] font-semibold hover:text-white">{item?.title}</p>
                         <FaArrowRight className="text-[#FF3811] hover:text-white" />
                     </Link>)
                 }

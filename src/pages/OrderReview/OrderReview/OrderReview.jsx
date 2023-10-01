@@ -4,8 +4,11 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { FaReply, FaRegTrashAlt } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const OrderReview = () => {
+    // dynamic title
+    useTitle('Order Review')
     const { user } = useContext(AuthContext);
     const [booking, setBooking] = useState([]);
     // fetch data form server and sorting email and status

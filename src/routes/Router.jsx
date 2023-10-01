@@ -51,11 +51,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'order-review',
-                element: <OrderReview />
+                element: <PrivateRoute><OrderReview /></PrivateRoute>
             },
             {
                 path: 'manage-inventory',
-                element: <ManageInventory />
+                element: <PrivateRoute><ManageInventory /></PrivateRoute>
             }
         ]
     }

@@ -3,8 +3,11 @@ import Banner from "../Banner/Banner";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from 'sweetalert2';
+import useTitle from "../../../hooks/useTitle";
 
 const CheckOut = () => {
+    // dynamic title
+    useTitle('Checkout')
     const { user } = useContext(AuthContext);
     // fetch single data
     const product = useLoaderData();
@@ -20,7 +23,7 @@ const CheckOut = () => {
         const status = "pending"
         const productImg = product.img;
         const productPrice = product.price;
-        const personDetails = {customerName, email, date, productTitle, productImg, productPrice, message, status};
+        const personDetails = { customerName, email, date, productTitle, productImg, productPrice, message, status };
         // post user data into mongodb
         fetch('http://localhost:5000/userdetails', {
             method: 'POST',
@@ -29,15 +32,17 @@ const CheckOut = () => {
             },
             body: JSON.stringify(personDetails)
         })
-        .then(res => res.json())
-        .then(data => {
-            // sweet alert
-            Swal.fire({
-                icon: 'success',
-                title: 'Successfully Added',
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    // sweet alert
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully Added',
+                    })
+                    form.reset();
+                }
             })
-            form.reset();
-        })
     }
     return (
         <div className="lg:w-9/12 mx-auto px-5 lg:px-0 space-y-32">

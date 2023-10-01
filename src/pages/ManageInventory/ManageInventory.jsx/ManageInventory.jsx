@@ -2,8 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const ManageInventory = () => {
+    // dynamic title
+    useTitle('Manage Inventory')
     const { user } = useContext(AuthContext);
     const [booking, setBooking] = useState([]);
     const url = `http://localhost:5000/userdetails/approved?email=${user?.email}`;

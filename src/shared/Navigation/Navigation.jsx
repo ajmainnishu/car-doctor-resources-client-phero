@@ -39,7 +39,7 @@ const Navigation = () => {
                 <div className="navbar-end items-center space-x-5">
                     <FaRegClipboard className='text-2xl text-[#444444]' />
                     <FaSistrix className='text-2xl text-[#444444]' />
-                    <Link to={`/appointment/login`} className="btn text-[#FF3811] capitalize btn-outline rounded-md px-7 text-lg font-semibold">Appointment</Link>
+                    <Link to={`/appointment/order-review`} className="btn text-[#FF3811] capitalize btn-outline rounded-md px-7 text-lg font-semibold">Appointment</Link>
                 </div>
             </div>
         </div>

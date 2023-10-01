@@ -6,9 +6,12 @@ import Quote from "../Quote/Quote";
 import { useState } from "react";
 import SingleService from "./SingleService";
 import AllServices from "./AllServices";
+import useTitle from "../../../hooks/useTitle";
 
 
 const Service = () => {
+    // dynamic title
+    useTitle('Service Details')
     // fetch single data
     const loadingServices = useLoaderData();
     // import single data into state hook
@@ -32,9 +35,9 @@ const Service = () => {
                     {/* quote component */}
                     <Quote></Quote>
                     {/* price */}
-                    <p className="text-[#151515] text-4xl font-bold">Price: ${services.price}</p>
+                    <p className="text-[#151515] text-4xl font-bold">Price: ${services?.price}</p>
                     {/* checkout button */}
-                    <Link to={`/checkout/${services._id}`} className="btn btn-block capitalize text-lg text-white bg-[#FF3811] rounded">Proceed Checkout</Link>
+                    <Link to={`/checkout/${services?._id}`} className="btn btn-block capitalize text-lg text-white bg-[#FF3811] rounded">Proceed Checkout</Link>
                 </div>
             </div>
         </div>

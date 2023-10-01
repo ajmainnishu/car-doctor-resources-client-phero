@@ -6,8 +6,10 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { ToastContainer, toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login')
     const { userSignIn, userFacebookSignIn, userGoogleSignIn } = useContext(AuthContext);
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';

@@ -1,7 +1,10 @@
+import useTitle from "../../../hooks/useTitle";
 import Banner from "../Banner/Banner";
 import Swal from 'sweetalert2'
 
 const AddNewService = () => {
+    // dynamic title
+    useTitle('Add Service')
     const handleAddService = event => {
         event.preventDefault();
         const form = event.target;

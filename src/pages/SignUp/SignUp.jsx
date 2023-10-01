@@ -1,14 +1,20 @@
 import loginPhoto from '../../assets/login/login.svg';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import googleIcon from '../../assets/social_media/google 1.svg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
+    // dynamic title
+    useTitle('SignUp')
     const { createUser, userInfoUpdate, userFacebookSignIn, userGoogleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
     // user create email
     const handleSignUp = event => {
         event.preventDefault();
@@ -28,6 +34,7 @@ const SignUp = () => {
                     title: 'Successfully Sign Up',
                 })
                 form.reset();
+                navigate(from, {replace: true})
             }).catch(error => {
                 // react toastify
                 toast(error.message);

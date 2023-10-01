@@ -22,15 +22,15 @@ const Services = () => {
             {/* items box container */}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
-                    items.map(item => <div key={item._id} className="px-5 py-6 border shadow rounded-lg">
+                    items?.map(item => <div key={item?._id} className="px-5 py-6 border shadow rounded-lg">
                         <div className='bg-[#F3F3F3] rounded-lg '>
-                            <img src={item.img} alt="Items Photo" className='h-60 w-full mx-auto rounded-lg ' />
+                            <img src={item?.img} alt="Items Photo" className='h-60 w-full mx-auto rounded-lg ' />
                         </div>
                         <div className='pt-5 pb-1.5 space-y-2.5'>
-                            <h3 className='text-[#444444] text-2xl font-bold'>{item.title}</h3>
+                            <h3 className='text-[#444444] text-2xl font-bold'>{item?.title}</h3>
                             <div className="flex items-center justify-between">
-                                <p className='text-[#FF3811] text-xl font-semibold'>Price: ${item.price}</p>
-                                <Link to={`/services/${item._id}`}><FaArrowRight className="text-[#FF3811]" /></Link>
+                                <p className='text-[#FF3811] text-xl font-semibold'>Price: ${item?.price}</p>
+                                <Link to={`/services/${item?._id}`}><FaArrowRight className="text-[#FF3811]" /></Link>
                             </div>
                         </div>
                     </div>)

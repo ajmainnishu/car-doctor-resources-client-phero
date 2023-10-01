@@ -18,7 +18,7 @@ const PrivateRoute = ({ children }) => {
             <span className="loading loading-bars loading-lg"></span>
         </div>
     }
-    return <Navigate to={`/appointment/login`} state={{from: location}} replace ></Navigate>
+    return <Navigate to={`/appointment/login`} state={{ from: location }} replace ></Navigate>
 };
 
 export default PrivateRoute;
