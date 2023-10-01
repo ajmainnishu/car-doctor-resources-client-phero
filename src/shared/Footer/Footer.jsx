@@ -21,13 +21,13 @@ const Footer = () => {
                 <header className="text-white font-semibold text-xl capitalize mb-9">About</header>
                 <Link to={`/`} className="link link-hover text-[#F3F3F3]">Home</Link>
                 <Link to={`/add-new-service`} className="link link-hover text-[#F3F3F3]">Service</Link>
-                <Link className="link link-hover text-[#F3F3F3]">Contact</Link>
+                <Link to={`/contact`} className="link link-hover text-[#F3F3F3]">Contact</Link>
             </nav>
             {/* item 2 */}
             <nav>
                 <header className="text-white font-semibold text-xl capitalize mb-9">Company</header>
-                <Link className="link link-hover text-[#F3F3F3]">Why Car Doctor</Link>
-                <Link className="link link-hover text-[#F3F3F3]">About</Link>
+                <Link to={`/blog`} className="link link-hover text-[#F3F3F3]">Why Car Doctor</Link>
+                <Link to={`/about`} className="link link-hover text-[#F3F3F3]">About</Link>
             </nav>
             {/* item 3 */}
             <nav>

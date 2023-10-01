@@ -10,6 +10,10 @@ import PrivateRoute from "./PrivateRoute";
 import Appointment from "../layout/Appoinment/Appointment";
 import OrderReview from "../pages/OrderReview/OrderReview/OrderReview";
 import ManageInventory from "../pages/ManageInventory/ManageInventory.jsx/ManageInventory";
+import EmptyPage from "../pages/EmptyPage/EmptyPage";
+import About from "../pages/About/About";
+import Blog from "../pages/Blog/Blog";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +24,18 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home />,
                 loader: () => fetch('http://localhost:5000/services')
+            },
+            {
+                path: 'about',
+                element: <About />
+            },
+            {
+                path: 'blog',
+                element: <Blog />
+            },
+            {
+                path: 'contact',
+                element: <Contact />
             },
             {
                 path: 'services/:id',
@@ -58,6 +74,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><ManageInventory /></PrivateRoute>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <EmptyPage />
     }
 ])
 

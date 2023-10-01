@@ -6,10 +6,10 @@ const Navigation = () => {
     // nav links
     const navLink = <>
         <li className='text-xl font-semibold text-[#444444]'><Link to={`/`}>Home</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link>About</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link to={`/about`}>About</Link></li>
         <li className='text-xl font-semibold text-[#444444]'><Link to={`/add-new-service`}>Services</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link>Blog</Link></li>
-        <li className='text-xl font-semibold text-[#444444]'><Link>Contact</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link to={`blog`}>Blog</Link></li>
+        <li className='text-xl font-semibold text-[#444444]'><Link to={`contact`}>Contact</Link></li>
     </>
     return (
         <div className='lg:w-9/12 mx-auto my-10'>
