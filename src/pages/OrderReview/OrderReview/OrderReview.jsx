@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaReply, FaRegTrashAlt } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../../hooks/useTitle";
 
@@ -11,13 +11,26 @@ const OrderReview = () => {
     useTitle('Order Review')
     const { user } = useContext(AuthContext);
     const [booking, setBooking] = useState([]);
+    const navigate = useNavigate('')
     // fetch data form server and sorting email and status
     const url = `http://localhost:5000/userdetails/pending?email=${user?.email}`
     useEffect(() => {
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('email-token')}`
+            }
+        })
             .then(res => res.json())
-            .then(data => setBooking(data))
-    }, [url])
+            .then(data => {
+                // data jwt token expire check
+                if(!data.error) {
+                    setBooking(data)
+                } else {
+                    navigate('/')
+                }
+            })
+    }, [url, navigate])
     // service delete button
     const handleItemDelete = _id => {
         // delete single service from server

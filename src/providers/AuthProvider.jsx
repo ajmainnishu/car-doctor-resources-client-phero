@@ -50,6 +50,23 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
             setLoading(false);
+            // jwt email token
+            if (loggedUser && loggedUser?.email) {
+                const userEmail = { email: loggedUser?.email }
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(userEmail)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('email-token', data.token)
+                    })
+            } else {
+                localStorage.removeItem('email-token')
+            }
         })
         return () => {
             return unsubscribe();
